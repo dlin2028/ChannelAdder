@@ -1,0 +1,5 @@
+scipy
+pydub
+tensorflow-gpu
+keras
+matplotlib

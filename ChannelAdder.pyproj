@@ -1,0 +1,74 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>5dd8250d-d82d-46ef-8350-c0ce5d03188c</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>ChannelAdder.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>ChannelAdder</Name>
+    <RootNamespace>ChannelAdder</RootNamespace>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="AudioHelpers.py" />
+    <Compile Include="ChannelAdder.py" />
+    <Compile Include="functions.py" />
+    <Compile Include="helpers.py" />
+    <Compile Include="kerasHelpers.py">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="model.h5" />
+    <Content Include="requirements.txt" />
+    <Content Include="inputs\www_lynnemusic_com_surround_test.wav" />
+    <Content Include="training\inactive\Bjorn_Lynne-A-Lifetime-Of-Moments_%285-1_surround%29.wav" />
+    <Content Include="training\inactive\Bjorn_Lynne-Joolis-Song-surround.wav" />
+    <Content Include="training\inactive\bjorn_lynne-secret_world_%28surround_version%29.wav" />
+    <Content Include="training\inactive\Bjorn_Lynne-Signals_%285-1_surround%29.wav" />
+    <Content Include="training\inactive\Bjorn_Lynne-Starfield_%285-1_Surround%29.wav" />
+    <Content Include="training\inactive\Bjorn_Lynne-Sun_Willow-surround.wav" />
+    <Content Include="training\inactive\Bjorn_Lynne-The_Fairy_Woods%285-1_surround%29.wav" />
+    <Content Include="training\inactive\Bjorn_Lynne-Voyager_%28surround%29.wav" />
+    <Content Include="training\www_lynnemusic_com_surround_test.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.7</Version>
+      <Description>env (Python 3.7 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="inputs\" />
+    <Folder Include="outputs\" />
+    <Folder Include="training\" />
+    <Folder Include="training\inactive\" />
+    <Folder Include="training\stereo\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
